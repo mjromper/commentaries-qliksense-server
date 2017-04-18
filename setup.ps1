@@ -14,7 +14,7 @@ $Host.UI.RawUI.BackgroundColor = "Black"
 Clear-Host
 
 # define some variables
-$temp="c:\TempComments\TempCommentsSetup-yFH4gu"
+$temp="c:\TempCommentaries\TempCommentariesSetup-yFH4gu"
 $npm="npm-1.4.12.zip"
 $config="c:\Program Files\Qlik\Sense\ServiceDispatcher"
 $target="$config\Node\Commentaries-Server"
