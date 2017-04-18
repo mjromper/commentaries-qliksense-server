@@ -2,7 +2,6 @@ var express = require('express')
     app = express(),
     bodyParser = require('body-parser'),
     port = process.env.PORT || '8200',
-    ip = process.env.IP || '127.0.0.1',
     path = require('path'),
     fs = require('fs'),
     https = require('https');
@@ -40,6 +39,6 @@ var options = {
 };
 
 var server = https.createServer( options, app );
-server.listen( port, ip, function() {
-   console.log('HTTP Server running on '+ip+', listening on port ' + port );
+server.listen( port, function() {
+   console.log('HTTP Server listening on port ' + port );
 } );
