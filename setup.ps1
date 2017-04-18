@@ -34,8 +34,8 @@ if(!(Test-Path -Path "$target\node_modules")) {
 	}
 
     # check if module has been downloaded
-    if(!(Test-Path -Path "$target\src")) {
-        New-Item -Path "$target\src" -Type directory | Out-Null
+    if(!(Test-Path -Path "$target\routes")) {
+        New-Item -Path "$target\routes" -Type directory | Out-Null
         Invoke-WebRequest "http://raw.githubusercontent.com/mjromper/commentaries-qliksense-server/master/index.js" -OutFile "$target\index.js"
         Invoke-WebRequest "http://raw.githubusercontent.com/mjromper/commentaries-qliksense-server/master/db.js" -OutFile "$target\db.js"
         Invoke-WebRequest "http://raw.githubusercontent.com/mjromper/commentaries-qliksense-server/master/routes/index.js" -OutFile "$target\routes\index.js"
