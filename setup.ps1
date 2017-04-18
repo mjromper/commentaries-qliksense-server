@@ -65,7 +65,7 @@ if(!(Test-Path -Path "$target\node_modules")) {
 function Read-Default($text, $defaultValue) { $prompt = Read-Host "$($text) [$($defaultValue)]"; return ($defaultValue,$prompt)[[bool]$prompt]; }
 
 # check if config has been added already
-if (!(Select-String -path "$config\services.conf" -pattern "Identity=aor-o365-auth" -quiet)) {
+if (!(Select-String -path "$config\services.conf" -pattern "Identity=aor-commentaries-server" -quiet)) {
 
 	$settings = @"
 
