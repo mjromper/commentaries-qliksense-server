@@ -16,7 +16,7 @@ arg.forEach( function(a) {
       case "auth_port":
         port = key[1];
         break;
-      case "auth_port_unsecure":
+      case "comments_port_unsecure":
         port_unsecure = key[1];
         break;
   }

@@ -66,9 +66,6 @@ Enter (HTTP) port [8202]:
 - ***port***: *This is the port where the server will be running on*
 
 
-When the script is finished you need to restart Qlik ServiceDispacher service.
-
-
 
 
 
