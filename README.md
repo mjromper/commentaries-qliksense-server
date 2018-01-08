@@ -24,19 +24,19 @@ Commentary object definition:
 
 Retrieve all commentary attached to a sheet and an anchor
 ```
-    GET - https://HOSTNAME/api/comments?sheetId=SHEET_ID&anchor=ANCHOR_VALUE
+    GET - https://HOSTNAME:8200/api/comments?sheetId=SHEET_ID&anchor=ANCHOR_VALUE
 ```
 Add a new commentary
 ```
-    POST - https://HOSTNAME/api/comments
+    POST - https://HOSTNAME:8200/api/comments
 ```
 Update a specific commentary
 ```
-    POST - https://HOSTNAME/api/comments/:id
+    POST - https://HOSTNAME:8200/api/comments/:id
 ```
 Delete a specific commentary
 ```
-    DELETE - https://HOSTNAME/api/comments/:id
+    DELETE - https://HOSTNAME:8200/api/comments/:id
 ```
 
 ## Installation of this module
