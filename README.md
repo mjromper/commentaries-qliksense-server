@@ -59,7 +59,8 @@ This will download and execute the setup script.
 When the downloading and installation of the modules including their dependencies are finished you will be prompted for some configuration options.
 
 ```
-Enter port [8200]:
+Enter (HTTPS) port [8200]:
+Enter (HTTP) port [8202]:
 ```
 
 - ***port***: *This is the port where the server will be running on*
