@@ -116,5 +116,3 @@ net start QlikSenseServiceDispatcher
 Write-Host $nl"'Qlik Sense Service Dispatcher' restarted."$nl
 
 Write-Host $nl"Done! Commentaries write-back module installed."$nl
-
-Write-Host $nl"Done! Please restart the 'Qlik Sense Service Dispatcher' service for changes to take affect."$nl
