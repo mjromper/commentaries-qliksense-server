@@ -80,6 +80,7 @@ Script=Node\commentaries-server\index.js
 
 [commentaries-server.parameters]
 auth_port=
+auth_port_unsecure=
 "@
 	Add-Content "$config\services.conf" $settings
 }
@@ -88,7 +89,8 @@ auth_port=
 Write-Host $nl"CONFIGURE MODULE"
 Write-Host $nl"To make changes to the configuration in the future just re-run this script."
 
-$auth_port=Read-Default $nl"Enter port" "8200"
+$auth_port=Read-Default $nl"Enter HTTPS port" "8200"
+$auth_port_unsecure=Read-Default $nl"Enter HTTP port" "8202"
 
 function Set-Config( $file, $key, $value )
 {
@@ -104,5 +106,15 @@ function Set-Config( $file, $key, $value )
 # write changes to configuration file
 Write-Host $nl"Updating configuration..."
 Set-Config -file "$config\services.conf" -key "auth_port" -value $auth_port
+Set-Config -file "$config\services.conf" -key "auth_port_unsecure" -value $auth_port_unsecure
+
+# Restart ServiceDipatcher
+Write-Host $nl"Restarting ServiceDispatcher.."
+net stop QlikSenseServiceDispatcher
+start-sleep 5
+net start QlikSenseServiceDispatcher
+Write-Host $nl"'Qlik Sense Service Dispatcher' restarted."$nl
+
+Write-Host $nl"Done! Commentaries write-back module installed."$nl
 
 Write-Host $nl"Done! Please restart the 'Qlik Sense Service Dispatcher' service for changes to take affect."$nl

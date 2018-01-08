@@ -2,9 +2,25 @@ var express = require('express')
     app = express(),
     bodyParser = require('body-parser'),
     port = process.env.PORT || '8200',
+    port_unsecure = process.env.PORT_UNSECURE || '8202',
     path = require('path'),
     fs = require('fs'),
+    http = require('http'),
     https = require('https');
+
+// Updateing configuration from parameters
+var arg = process.argv.slice(2);
+arg.forEach( function(a) {
+    var key = a.split("=");
+    switch( key[0] ) {
+      case "auth_port":
+        port = key[1];
+        break;
+      case "auth_port_unsecure":
+        port_unsecure = key[1];
+        break;
+  }
+} );
 
 var routes = require('./routes/index.js');
 var oneDay = 86400000;
@@ -40,5 +56,10 @@ var options = {
 
 var server = https.createServer( options, app );
 server.listen( port, function() {
-   console.log('HTTP Server listening on port ' + port );
+   console.log('HTTPS Server listening on port ' + port );
+} );
+
+var serverUnsecure = http.createServer( app );
+serverUnsecure.listen( port_unsecure, function() {
+   console.log('HTTP Server listening on port ' + port_unsecure );
 } );
